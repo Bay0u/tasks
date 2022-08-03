@@ -1,0 +1,43 @@
+/* CSS styles */
+h1 {
+    font-family: Impact, sans-serif;
+    color: rgba(0, 0, 0, 0.664);
+    text-align: middle;
+    }
+body{ 
+    position: absolute;
+}
+.form{
+    margin-left: 400px;
+    margin-top: 25%;
+}
+img{
+    position: absolute;
+
+}
+form{
+    margin-top: 10%;
+}
+p{
+    font-family: sans-serif;
+    color: rgba(0, 0, 0, 0.664);
+    text-align: middle;}
+html{
+    background-image: url("https://th.bing.com/th/id/R.4993ee527b95efa0b496d151644907d9?rik=Sk0R0QwIyd8EnA&pid=ImgRaw&r=0");
+    background-size: cover;
+}
+
+button {
+    background-color: #555555; /* Green */
+    border: none;
+    color: white;
+    padding: 1px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #220992; /* Green */
+    color: white;
+  }
