@@ -1,4 +1,4 @@
-
+/* CSS styles */
 body {
   margin: auto;
   font-family: sans-serif;
@@ -15,16 +15,15 @@ html{
 }
 
 table {
-  width: 800px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  
+  width: 800px;  
 }
 
 th,
 td {
   padding: 15px;
   background-color: rgba(255,255,255,0.2);
-  color: #fff;
+  color: rgb(0, 0, 0);
+  
 }
 
 th {
