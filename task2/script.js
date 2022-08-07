@@ -19,12 +19,12 @@ const startingMessageElement = document.getElementById('startingpage')
 const startButton = document.getElementById('startButton')
 let circleTurn
 
-startGame()
+showStartingPage()
 
 restartButton.addEventListener('click', Game)
 startButton.addEventListener('click',startGameButton)
 
-function startGame(){
+function showStartingPage(){
     startingMessageElement.classList.add('show')
 }
 function startGameButton(){
