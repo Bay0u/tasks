@@ -2,7 +2,7 @@
   
     <div class="container" >
       
-      <a href="#"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.poster_path}}" alt="{{movie.original_title}}" class = "cover"></a>
+      <a href="https://www.imdb.com/title/{{movie.imdb_id}}"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.poster_path}}" alt="{{movie.original_title}}" class = "cover"></a>
           
       <div class="hero" >
         <div class="details">
@@ -32,7 +32,7 @@
         
         <div class="column2">
           
-          <p> {{movie.overview}} <a href="https://www.imdb.com/title/{{movie.imdb_id}}">    read more</a></p>
+          <p> {{movie.overview}} <a href="https://www.imdb.com/title/{{movie.imdb_id}}">    view more</a></p>
           
           <div class="avatars" >
           <div class = "company" *ngFor="let company of movie.production_companies">
