@@ -10,17 +10,17 @@ import { PostService } from '../home/post.service';
 export class MovieComponent implements OnInit {
   movie: any;
 
-  constructor(private service:PostService , private router: Router) { }
+  constructor(private service: PostService, private router: Router) { }
 
-  getMovieContent(id:any){
-    this.service.getoneMovie(id).subscribe((data:any)=>{
+  getMovieContent(id: any) {
+    this.service.getoneMovie(id).subscribe((data: any) => {
       console.log(data)
       this.movie = data;
     });
   }
-  onToggleFavorite() {}
+  onToggleFavorite() { }
   ngOnInit(): void {
-    var id = this.router.url.split("/",3)[2]
+    var id = this.router.url.split("/", 3)[2]
     this.getMovieContent(id)
   }
 

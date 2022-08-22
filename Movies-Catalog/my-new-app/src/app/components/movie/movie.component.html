@@ -1,52 +1,56 @@
-<div class="movie-card" *ngIf="movie" >
-  
-    <div class="container" >
-      
-      <a href="https://www.imdb.com/title/{{movie.imdb_id}}"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.poster_path}}" alt="{{movie.original_title}}" class = "cover"></a>
-          
-      <div class="hero" >
-        <div class="details">
-        
-          <div class="title1">{{movie.title}}</div>
-  
-          <div class="title2">{{movie.tagline}}</div>    
-          
-          <fieldset class="rating">
-      <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star">{{movie.vote_average}}</label>
-    </fieldset>
-          
-          <span class="likes">{{movie.vote_count}} votes</span>
-          
-        </div> <!-- end details -->
-        <!-- <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.backdrop_path}}" alt="{{movie.original_title}}" style="position:absolute;"> -->
+<div class="movie-card" *ngIf="movie">
 
-      </div> <!-- end hero -->
-      
-      <div class="description">
-        
-        <div class="column1">
-          <span class="tag" *ngFor="let genre of movie.genres">{{genre.name}}</span>
-          <p class="tag2" >{{movie.status}} {{movie.release_date}}</p>
+  <div class="container">
 
-        </div> <!-- end column1 -->
-        
-        <div class="column2">
-          
-          <p> {{movie.overview}} <a href="https://www.imdb.com/title/{{movie.imdb_id}}">    view more</a></p>
-          
-          <div class="avatars" >
-          <div class = "company" *ngFor="let company of movie.production_companies">
-              <a href="http://www.google.com/search?q={{company.name}}"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{company.logo_path}}" alt="{{company.name}}"/>
-                </a>
-              </div>
-            
-          </div> <!-- end avatars -->
-          
-          
-          
-        </div> <!-- end column2 -->
-      </div> <!-- end description -->
-      
-     
-    </div> <!-- end container -->
-  </div> <!-- end movie-card -->
+    <a href="https://www.imdb.com/title/{{movie.imdb_id}}"><img
+        src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.poster_path}}" alt="{{movie.original_title}}"
+        class="cover"></a>
+
+    <div class="hero">
+      <div class="details">
+
+        <div class="title1">{{movie.title}}</div>
+
+        <div class="title2">{{movie.tagline}}</div>
+
+        <fieldset class="rating">
+          <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"
+            title="Sucks big time - 1 star">{{movie.vote_average}}</label>
+        </fieldset>
+
+        <span class="likes">{{movie.vote_count}} votes</span>
+
+      </div> <!-- end details -->
+      <!-- <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.backdrop_path}}" alt="{{movie.original_title}}" style="position:absolute;"> -->
+
+    </div> <!-- end hero -->
+
+    <div class="description">
+
+      <div class="column1">
+        <span class="tag" *ngFor="let genre of movie.genres">{{genre.name}}</span>
+        <p class="tag2">{{movie.status}} {{movie.release_date}}</p>
+
+      </div> <!-- end column1 -->
+
+      <div class="column2">
+
+        <p> {{movie.overview}} <a href="https://www.imdb.com/title/{{movie.imdb_id}}"> view more</a></p>
+
+        <div class="avatars">
+          <div class="company" *ngFor="let company of movie.production_companies">
+            <a href="http://www.google.com/search?q={{company.name}}"><img
+                src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{company.logo_path}}" alt="{{company.name}}" />
+            </a>
+          </div>
+
+        </div> <!-- end avatars -->
+
+
+
+      </div> <!-- end column2 -->
+    </div> <!-- end description -->
+
+
+  </div> <!-- end container -->
+</div> <!-- end movie-card -->

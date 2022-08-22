@@ -11,13 +11,13 @@ export class AppComponent {
 
    isUserLoggedIn = false;
 
-   constructor(private authService: AuthService) {}
+   constructor(private authService: AuthService) { }
 
    ngOnInit() {
       let storeData = localStorage.getItem("isUserLoggedIn");
       console.log("StoreData: " + storeData);
 
-      if( storeData != null && storeData == "true")
+      if (storeData != null && storeData == "true")
          this.isUserLoggedIn = true;
       else
          this.isUserLoggedIn = false;

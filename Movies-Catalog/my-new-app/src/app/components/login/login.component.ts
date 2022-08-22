@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
    password!: string;
    formData!: FormGroup;
 
-   constructor(private authService : AuthService, private router : Router) { }
+   constructor(private authService: AuthService, private router: Router) { }
 
    ngOnInit() {
       this.formData = new FormGroup({
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
          password: new FormControl(""),
       });
    }
-   
+
    onClickSubmit(data: any) {
       this.userName = data.userName;
       this.password = data.password;
@@ -32,12 +32,12 @@ export class LoginComponent implements OnInit {
       //console.log("Login page password: " + this.password);
 
       this.authService.login(this.userName, this.password)
-         .subscribe( data => { 
+         .subscribe(data => {
             //console.log("Is Login Success: " + data);
-           if(data) this.router.navigate(['/home']).then(() => {
-            window.location.reload();
-          }); 
-      });
+            if (data) this.router.navigate(['/home']).then(() => {
+               window.location.reload();
+            });
+         });
    }
-   
+
 }
