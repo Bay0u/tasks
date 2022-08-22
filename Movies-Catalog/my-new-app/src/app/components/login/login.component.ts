@@ -28,13 +28,12 @@ export class LoginComponent implements OnInit {
       this.userName = data.userName;
       this.password = data.password;
 
-      console.log("Login page username: " + this.userName);
-      console.log("Login page password: " + this.password);
+      //console.log("Login page username: " + this.userName);
+      //console.log("Login page password: " + this.password);
 
       this.authService.login(this.userName, this.password)
          .subscribe( data => { 
-            console.log("Is Login Success: " + data); 
-      
+            //console.log("Is Login Success: " + data);
            if(data) this.router.navigate(['/home']).then(() => {
             window.location.reload();
           }); 

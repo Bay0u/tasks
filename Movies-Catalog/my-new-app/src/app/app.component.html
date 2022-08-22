@@ -1,23 +1,18 @@
 <body>
-<div class="topnav">
-       
-          <a  href="#">Home
-             <span routerLink="/home"></span>
-          </a>
-       
-       <!-- <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-       </li> -->
-       
-       
-                   <div *ngIf="isUserLoggedIn; else isLogOut">
-                         <a  routerLink="/logout">Logout</a>
-                   </div>
-                   <ng-template #isLogOut>
-                               <a routerLink="/login">Login</a>
-                   </ng-template>
-       
- </div>
+   <div class="topnav">
 
-<router-outlet></router-outlet>
+      <a href="#">Home
+         <span routerLink="/home"></span>
+      </a>
+
+      <div *ngIf="isUserLoggedIn; else isLogOut">
+         <a routerLink="/logout">Logout</a>
+      </div>
+      <ng-template #isLogOut>
+         <a routerLink="/login">Login</a>
+      </ng-template>
+
+   </div>
+
+   <router-outlet></router-outlet>
 </body>

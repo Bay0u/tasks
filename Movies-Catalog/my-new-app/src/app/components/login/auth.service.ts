@@ -17,9 +17,8 @@ export class AuthService {
       localStorage.setItem('isUserLoggedIn', this.isUserLoggedIn ? "true" : "false"); 
       
    return of(this.isUserLoggedIn).pipe(
-      delay(1000),
       tap(val => { 
-         console.log("Is User Authentication is successful: " + val);
+         //console.log("Is User Authentication is successful: " + val);
          if(!val){
             alert("Wrong username or password Please use admin details to login         [little tip look bottom right the page]");
          }

@@ -1,44 +1,45 @@
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #31313165;
-    overflow: hidden;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
-  body{
-    width: 100%;
-    height: auto;
-    background-image: url(https://cdn-cedfl.nitrocdn.com/oFPwfBihQdaycSkyQOVqHIZYjxqnzTQg/assets/static/optimized/rev-f16d75d/wp-content/uploads/2018/02/Batch-Two-4.jpeg.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    font-family: Arial;
-    position: absolute;
-    margin: -8px;
-    text-align: center;
+  background-color: #31313165;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  background-image: url(https://cdn-cedfl.nitrocdn.com/oFPwfBihQdaycSkyQOVqHIZYjxqnzTQg/assets/static/optimized/rev-f16d75d/wp-content/uploads/2018/02/Batch-Two-4.jpeg.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  font-family: Arial;
+  position: absolute;
+  margin: -8px;
+  text-align: center;
   /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
- }
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
