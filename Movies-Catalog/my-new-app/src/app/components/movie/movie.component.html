@@ -36,8 +36,9 @@
           
           <div class="avatars" >
           <div class = "company" *ngFor="let company of movie.production_companies">
-              <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{company.logo_path}}" alt="{{company.name}}"/>
-           </div>
+              <a href="http://www.google.com/search?q={{company.name}}"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{company.logo_path}}" alt="{{company.name}}"/>
+                </a>
+              </div>
             
           </div> <!-- end avatars -->
           
