@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'error', component: PageNotFoundScreenComponent },
   { path: '**', redirectTo: '/error' }
 ]
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

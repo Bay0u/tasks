@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private service: PostService, private router: Router) { }
   movieclicked(id: any) {
-    console.log(id);
+    //console.log(id);
 
     this.router.navigate(['/home/' + id]).then(() => {
       window.location.reload();

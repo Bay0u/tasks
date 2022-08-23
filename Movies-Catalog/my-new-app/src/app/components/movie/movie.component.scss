@@ -8,8 +8,20 @@
   box-sizing: border-box;
 }
 
-body {
-  background: #43423E;
+.body {
+  width: 100%;
+  height: 1500%;
+  background-image: url(https://cdn-cedfl.nitrocdn.com/oFPwfBihQdaycSkyQOVqHIZYjxqnzTQg/assets/static/optimized/rev-f16d75d/wp-content/uploads/2018/02/Batch-Two-4.jpeg.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  font-family: Arial;
+  position: absolute;
+  text-align: center;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {
@@ -23,15 +35,13 @@ a:hover {
 
 .movie-card {
   font: 14px/22px "Lato", Arial, sans-serif;
-  color: #A9A8A3;
   padding: 40px 0;
 }
 
 .container {
   margin: 0 auto;
-  width: 780px;
-  height: 640px;
-  background: #F0F0ED;
+  width: 60%;
+  height: 100%;
   border-radius: 5px;
   position: relative;
 }
@@ -79,11 +89,9 @@ a:hover {
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.5);
   /* Black see-through */
-  color: #f1f1f1;
   width: 100%;
   transition: .5s ease;
   opacity: 0;
-  color: white;
   font-size: 20px;
   padding: 20px;
   text-align: center;
@@ -127,6 +135,7 @@ a:hover {
 
   .likes {
     margin-left: 24px;
+    color: #ffffff;
   }
 
 
@@ -140,12 +149,12 @@ a:hover {
 }
 
 .description {
-
   bottom: 0px;
-  height: 200px;
+  height: 50%;
+  width: 100%;
   font-size: 16px;
   line-height: 26px;
-  color: #B1B0AC;
+  color: #000000;
 
 }
 
@@ -155,32 +164,42 @@ a:hover {
   width: 220px;
   float: left;
   text-align: center;
+  width: 26%;
+  height: 100%;
 }
 
 .tag {
-  background: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 3px 8px;
   font-size: 14px;
   margin-right: 4px;
   line-height: 35px;
   cursor: pointer;
+  width: 100%;
+  height: 100%;
 }
 
 .tag2 {
-  color: black;
+  color: rgb(255, 255, 255);
+  background-color: #000;
+  width: 100%;
+  height: 100%;
 }
 
 .tag:hover {
-  background: #ddd;
+  background: rgb(0, 0, 0);
 }
 
 .column2 {
-  padding-left: 41px;
-  padding-top: 30px;
-  margin-left: 20px;
-  width: 480px;
+  width: 100%;
+  position: absolute;
   float: left;
+  background-color: rgba(92, 78, 78, 0.705);
+}
+.column2 p{
+  margin-left: 30%;
+  margin-right: 5%;
 }
 
 .company {
@@ -197,7 +216,6 @@ a:hover {
 .avatars {
   margin-top: 23px;
   width: 100%;
-
   img {
     cursor: pointer;
   }
