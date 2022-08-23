@@ -8,16 +8,17 @@
 
             <form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)">
 
-                  <input type="email" id="username"  formControlName="userName" placeholder="Username"
-                        required><br><br>
-                        <!-- <div *ngIf="formData.controls['userName'].errors?.['required']" class = "alert alert-danger">Please type your Username</div> -->
+                  <input type="email" id="username" formControlName="userName" placeholder="Username" required><br><br>
+                  <div *ngIf="formData.controls['userName'].errors?.['required']"
+                        style="color: rgba(240, 248, 255, 0.596);">Please type your Username</div>
                   <input type="password" id="inputPassword" formControlName="password" placeholder="Password"
                         required><br><br>
-                        <!-- <div *ngIf="formData.controls['password'].errors?.['required']" class = "alert alert-danger">Please type your Password</div> -->
+                  <div *ngIf="formData.controls['password'].errors?.['required']"
+                        style="color: rgba(240, 248, 255, 0.555);">Please type your Password</div>
                   <button type="submit">Sign in</button>
 
             </form>
-            <p style="color: rgb(0, 255, 0); margin-top: 10%;margin-left: 165%; text-align: left;">Use username
+            <p style="color: rgb(0, 255, 0); margin-top: 50px;margin-left: 135%; text-align: left;">Use username
                   "admin@ad.com" with password "admin"</p>
       </div>
 </div>
