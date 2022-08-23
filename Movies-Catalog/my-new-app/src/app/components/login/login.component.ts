@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
    ngOnInit() {
       this.formData = new FormGroup({
          userName: new FormControl("", [Validators.email,Validators.required]),
-         password: new FormControl("", Validators.required),
+         password: new FormControl("", [Validators.required,Validators.minLength(3)])
       });
    }
 
@@ -28,12 +28,8 @@ export class LoginComponent implements OnInit {
       this.userName = data.userName;
       this.password = data.password;
 
-      //console.log("Login page username: " + this.userName);
-      //console.log("Login page password: " + this.password);
-
       this.authService.login(this.userName, this.password)
          .subscribe(data => {
-            //console.log("Is Login Success: " + data);
             if (data) this.router.navigate(['/home']).then(() => {
                window.location.reload();
             });
