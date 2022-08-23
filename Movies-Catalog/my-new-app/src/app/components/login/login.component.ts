@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
-import { CustomValidators } from 'ng2-validation';
 
 @Component({
    selector: 'app-login',
@@ -20,7 +19,7 @@ export class LoginComponent implements OnInit {
 
    ngOnInit() {
       this.formData = new FormGroup({
-         userName: new FormControl("", CustomValidators.email),
+         userName: new FormControl("", [Validators.email,Validators.required]),
          password: new FormControl("", Validators.required),
       });
    }
