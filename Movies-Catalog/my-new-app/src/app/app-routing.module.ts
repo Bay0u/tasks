@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'logout', component: LogoutComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent, canActivate: [ExpenseGuard] },
-  { path: 'home/:id', component: MovieComponent, canActivate: [ExpenseGuard] },
+  { path: 'home/:page', component: HomeComponent, canActivate: [ExpenseGuard] },
+  { path: 'movie/:id', component: MovieComponent, canActivate: [ExpenseGuard] },
   { path: 'error', component: PageNotFoundScreenComponent },
   { path: '**', redirectTo: '/error' }
 ]

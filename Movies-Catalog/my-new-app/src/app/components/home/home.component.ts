@@ -8,7 +8,7 @@ import { MovieComponent } from '../movie/movie.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 
 export class HomeComponent implements OnInit {
@@ -21,34 +21,83 @@ export class HomeComponent implements OnInit {
   movieclicked(id: any) {
     //console.log(id);
 
-    this.router.navigate(['/home/' + id]).then(() => {
+    this.router.navigate(['/movie/' + id]).then(() => {
       window.location.reload();
     });
     //this.getmovie.getMovieContent(id);
   }
   totalLength: any;
   page: number = 1;
-
+  token: String = "";
   ngOnInit() {
-    console.log(this.page);
-    this.pageclicked();
-  }
-  pageclicked() {
-    var index: any[] = [];
-    for (let index = 1; index < 501; index++) {
-      this.service.getallMovies(index).subscribe((data: any) => {
-        this.list = this.list.concat(data.results);
-      });
+    //console.log(this.page);
+    var page = this.router.url.split("/", 3)[2]
+    this.pageclicked(page);
+    const left = document.getElementById('left');
+    const right = document.getElementById('right');
+
+    if(page == "1"){
+      if(left != null){
+        left.style.visibility = 'hidden';
+      }
     }
-    //this.savedata(this.movieslist);
-    //console.log("first");
-    //console.log(this.movieslist);
-
-    //this.totalLength = this.list.length;
-    // this.service.getallMovies().subscribe( (data:any)=>{
-    //   console.log(data)
-    //   this.list = data.results;
-    // }); 
+    if(page == "22"){
+      if(right != null){
+        right.style.visibility = 'hidden';
+      }
+    }
+    else{
+      if(page != "1"){
+        if(left!=null && left.style.visibility == 'hidden'){
+          left.style.visibility = 'visible';
+        }
+      }
+      if(page != "22"){
+        if(right!=null && right.style.visibility == 'hidden'){
+          right.style.visibility = 'visible';
+        }
+      }
+    }
   }
+  rightclick(){
+    var page = this.router.url.split("/", 3)[2];
+    //console.log("d5lt")
+    if((parseInt(page)+1) <=22){
+      var newpage = parseInt(page) +1 ;
+      //console.log(newpage)
 
+      var newurl = '/home/'+ newpage;
+      this.router.navigate([newurl]).then(() => {
+               window.location.reload();
+            });
+    }
+  }
+  leftclick(){
+    var page = this.router.url.split("/", 3)[2];
+    if((parseInt(page)-1) >=1){
+      var newpage = parseInt(page) -1 ;
+      var newurl = '/home/'+ newpage;
+      this.router.navigate([newurl]).then(() => {
+               window.location.reload();
+            });
+    }
+  }
+  pageclicked(page : any) {
+    // for (let index = 1; index < 10; index++) {
+    //   this.service.getallMovies(index).subscribe((data: any) => {
+    //     console.log(data);
+    //     this.list = this.list.concat(data.results);
+    //   });
+    // }
+
+    this.token = localStorage.getItem('token')+"";
+    //console.log("our token " + this.token);
+    this.service.getallMoviesback(page,this.token).subscribe((data: any) => {
+      //console.log("backend");
+      //console.log(data);
+      this.list = data.content;
+    });
+    
+  }
+  
 }

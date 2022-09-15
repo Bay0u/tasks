@@ -9,12 +9,15 @@ import { PostService } from '../home/post.service';
 })
 export class MovieComponent implements OnInit {
   movie: any;
+  token: String = "";
 
   constructor(private service: PostService, private router: Router) { }
 
   getMovieContent(id: any) {
-    this.service.getoneMovie(id).subscribe((data: any) => {
-      console.log(data)
+    this.token = localStorage.getItem('token')+"";
+    this.service.getoneMovieback(id,this.token).subscribe((data: any) => {
+      console.log("movie data")
+      console.log(data);
       this.movie = data;
     });
   }

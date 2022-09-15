@@ -8,9 +8,9 @@
 
             <form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)">
 
-                  <input type="email" id="email" formControlName="userName" placeholder="Email"
+                  <input type="email" id="email" formControlName="username" placeholder="Email"
                         class="form-control"><br><br>
-                  <div *ngIf="formData.controls['userName'].touched && !formData.controls['userName'].valid "
+                  <div *ngIf="formData.controls['username'].touched && !formData.controls['username'].valid "
                         style="color: rgba(240, 248, 255, 0.596);">Please type your email Correctly</div>
                   <input type="password" id="inputPassword" formControlName="password" placeholder="Password"
                         class="form-control"><br><br>
@@ -19,7 +19,7 @@
                   <button type="submit">Sign in</button>
 
             </form>
-            <p style="color: rgb(0, 255, 0); margin-top: 50px;margin-left: 135%; text-align: left;">Use username
-                  "admin@ad.com" with password "admin"</p>
+            <!-- <p style="color: rgb(0, 255, 0); margin-top: 50px;margin-left: 135%; text-align: left;">Use username
+                  "admin@ad.com" with password "admin"</p> -->
       </div>
 </div>

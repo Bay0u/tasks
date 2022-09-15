@@ -1,5 +1,5 @@
 import { Injectable, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -26,6 +26,7 @@ export class PostService {
   getallMovies(page: any) {
     return (this.httpClient.get(this.generateAllMovies(page)));
   }
+
   getoneMovie(id: any) {
     this.movie_id = id
     return this.httpClient.get(this.generateoneMovie(id))
@@ -39,5 +40,28 @@ export class PostService {
     this.movie_url = 'https://api.themoviedb.org/3/movie/' + this.movie_id + '?api_key=' + this.api_key + '&language=en-US';
     return this.movie_url
   }
+  
+  getallMoviesback(page: number , token:String) {
+    var headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
+    const httpOptions = {
+      headers: headers_object
+    };
+    this.top_rated_url= 'http://localhost:8080/movies/p/' + page
+    return (this.httpClient.get(
+      this.top_rated_url, httpOptions
+     ));
+  }
+  getoneMovieback(id: any , token:String) {
+    this.movie_id = id
+    var headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
+    const httpOptions = {
+      headers: headers_object
+    };
+    this.top_rated_url= 'http://localhost:8080/movies/'+id
+    return (this.httpClient.get(
+      this.top_rated_url, httpOptions
+     ));
+  }
+  
 
 }

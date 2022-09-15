@@ -11,26 +11,33 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-   userName: any;
+   username: any;
    password: any;
    formData!: FormGroup;
+   isUserLoggedIn: boolean = false;
+
 
    constructor(private authService: AuthService, private router: Router) { }
 
    ngOnInit() {
       this.formData = new FormGroup({
-         userName: new FormControl("", [Validators.email,Validators.required]),
+         username: new FormControl("", [Validators.email,Validators.required]),
          password: new FormControl("", [Validators.required,Validators.minLength(3)])
       });
    }
 
    onClickSubmit(data: any) {
-      this.userName = data.userName;
+      this.username = data.username;
       this.password = data.password;
 
-      this.authService.login(this.userName, this.password)
-         .subscribe(data => {
-            if (data) this.router.navigate(['/home']).then(() => {
+      this.authService.login(this.username, this.password , data)
+         .subscribe(dataa => {
+            
+            console.log(dataa.token);
+            this.isUserLoggedIn = dataa.token.length > 0;
+            localStorage.setItem('isUserLoggedIn', this.isUserLoggedIn ? "true" : "false");
+            localStorage.setItem('token', dataa.token+"");
+            if (dataa) this.router.navigate(['/home/1']).then(() => {
                window.location.reload();
             });
          });

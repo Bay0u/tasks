@@ -1,10 +1,6 @@
+
 <body>
-  <div class="wrapper" *ngFor="let item of list | 
-      paginate: {
-         itemsPerPage: 8,
-         currentPage: page,
-         totalItems : totalLength
-      }" style="display: inline-block">
+  <div class="wrapper" *ngFor="let item of list " style="display: inline-block">
     <a (click)="movieclicked(item.id)">
       <div class="card">
         <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{item.poster_path}}" alt="{{item.original_title}}">
@@ -15,6 +11,11 @@
         </div>
       </div>
     </a>
+    
   </div>
+  <div class="counter">
+    <button class="paginate left" id="left" (click)="leftclick()"><i></i><i></i></button>
+    <button class="paginate right" id="right" (click)="rightclick()"><i></i><i></i></button>
+  </div>
+  
 </body>
-<pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>

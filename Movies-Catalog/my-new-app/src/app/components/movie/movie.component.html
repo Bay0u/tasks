@@ -3,7 +3,7 @@
 
     <div class="container">
 
-      <a href="https://www.imdb.com/title/{{movie.imdb_id}}"><img
+      <a href="http://www.google.com/search?q={{movie.title}}"><img
           src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.poster_path}}" alt="{{movie.original_title}}"
           class="cover"></a>
 
@@ -40,7 +40,7 @@
 
         <div class="column2">
 
-          <p> {{movie.overview}} <a href="https://www.imdb.com/title/{{movie.imdb_id}}"> view more</a></p>
+          <p> {{movie.overview}} <a href="https://www.imdb.com/find?q={{movie.title}}"> view more</a></p>
 
           <div class="avatars">
             <div class="company" *ngFor="let company of movie.production_companies">
